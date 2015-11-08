@@ -1,0 +1,58 @@
+
+
+
+<section id="header">
+
+	<div class="container">
+		<h3>FPL Stats</h3>
+		<div class="seperator"></div>
+		<gameweek></gameweek>
+		<div class="menu">
+			<a ui-sref="app.fix.list.pitch" ui-sref-active="active">
+				Fixtures
+			</a>
+			<a ui-sref="app.compare" ui-sref-active="active">
+				Live
+			</a>
+			<a ui-sref="app.compareteams" ui-sref-active="active">
+				Compare
+
+			</a>
+			<a ui-sref="app.chat" ui-sref-active="active">
+				Chat
+			</a>
+		</div>
+
+			<div class="seperator"></div>
+		<div class="user" ng-show="!userDing" ng-click="addModal()">Login</div>
+		<div class="user" ng-show="userDing" ng-click="logout()">
+
+			<img ng-src="{{userDing.imgSrc}}">
+		</div>
+	</div>
+
+
+
+	<!-- <div class="header-title-wrap" ng-click="addModal()">
+		<h1 class="header-title" >Test FPL Stats</h1>
+	</div>
+	
+
+	<div class="nav-menu-outer">
+		<ul class="nav-menu">
+			<a ui-sref="app.fix.list.pitch" ui-sref-active="active">
+				<li class="nav-menu-inline nav-menu-inline-one">Fixtures</li>
+			</a>
+			<a ui-sref="app.compare" ui-sref-active="active">
+				<li class="nav-menu-inline nav-menu-inline-two">Live</li>
+			</a>
+			<a ui-sref="app.compareteams" ui-sref-active="active">
+				<li class="nav-menu-inline nav-menu-inline-three">Teams</li>
+			</a>
+			<a ui-sref="app.chat" ui-sref-active="active">
+				<li class="nav-menu-inline nav-menu-inline-four">Chat</li>
+			</a>
+		</ul>	
+	</div> -->
+
+</section>

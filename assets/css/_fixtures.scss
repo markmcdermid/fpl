@@ -1,0 +1,104 @@
+.no-gutter > [class*='col-'] {
+	padding-right:0;
+	padding-left:0;
+}
+
+.fixcha {
+	margin-top:15px;
+}
+.fix {
+	background: rgba(0,0,0,0.6);
+	padding:10;
+	position:relative;
+	color:white;
+	transition: all 0.1s ease-in;
+	height:auto;
+	display:flex;
+	touch-action: manipulation;
+
+	h2 {
+		font-size:22px;
+		font-weight:100;
+		text-align: center;
+		opacity:0.8;
+	}
+
+	.inner {
+		width:33%;
+		display:flex;
+		justify-content:center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.team-name {
+		display:block;
+		white-space: nowrap;
+		width:100%;
+		text-align: center;
+		
+	}
+
+	.live-player{
+		opacity:0.8;
+		margin: 5px 0;
+		display:block;
+	}
+}
+.time {
+	width:100%;
+	text-align: center;
+	background: rgba(0,0,0,0.8);
+	padding: 10px;
+	color:white;
+
+	h2 {
+		font-size:15px;
+		text-align: center;
+	}
+}
+.fix:hover {
+	background:rgba(0,0,0,0.4);
+}
+
+@media screen and (max-width:1024px) {
+	.live-game  {
+		position: absolute;
+		top: 5%;
+		left: 5%;
+		right: 5%;
+		width:90%;
+		height:90%;
+		z-index: 3;
+
+		.live-game-pitch {
+			width:100%;
+			height:100%;
+		}
+	}
+
+	.fixture-overlay-mobile {
+		position: absolute;
+		right: 0; left: 0; top: 0; bottom: 0;
+		background: rgba(0,0,0,0.7);
+		z-index: 2;
+		display:none;
+	}
+
+	.fixture-overlay-mobile.active {
+		display:block;
+	}
+
+	.fix {
+		.team-name {
+			font-size: 0.7em;
+		}
+	}
+
+	.time {
+		padding: 5px;
+		h2 {
+			font-size: 0.7em;
+		}
+	}
+}

@@ -1,0 +1,204 @@
+/* === MODAL === */
+
+ .md-modal {
+ 	position: fixed;
+ 	top: 50%;
+ 	left: 50%;
+ 	width: 50%;
+ 	height: auto;
+ 	min-width: 320px;
+ 	max-width:630px;
+ 	z-index:2000;
+ 	visibility:hidden;
+ 	@include transform-translate(-50%, -50%);
+ 	background-color:white;
+ }
+ .md-overlay {
+ 	position: fixed;
+ 	width: 100%;
+ 	height: 100%;
+ 	visibility: hidden;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 199;
+ 	opacity: 0;
+ 	background: rgba(0,0,0,0.6);
+ 	transition: all 0.3s ease;
+ }
+
+ .md-show {
+ 	visibility: visible;
+ 	opacity:1;
+ }
+
+ .md-content-div {
+ 	position:relative;
+ }
+
+ .md-content {
+ 	display:none;
+ }
+
+ .md-show .md-content  {
+ 	display:block;
+ }
+
+ .md-content-title {
+ 	padding:20;
+ }
+
+ .md-content-text {
+ 	text-align: center;
+ 	padding:10;
+ }
+
+ .md-close {
+ 	position: absolute;
+ 	color: $dark-grey;
+ 	opacity:0.3;
+ 	font-size: 2em;
+ 	right: 0;
+ 	top: 0;
+ 	cursor: pointer;
+ 	z-index: 10;
+ 	margin: 10px;
+ 	touch-action: manipulation;
+ }
+
+ .md-close:hover {
+ 	opacity:1;
+ }
+
+ .md-close:active {
+ 	color:hotpink;
+ }
+
+ /* === MODAL FORM === */
+
+ .md-form-input {
+ 	display:block;
+ 	width: 100%;
+ 	margin: 0 auto;
+ 	padding: 0.5em;
+ 	text-align:center;
+ 	color: #000;
+ 	background: white;
+ 	font-size: 30px;
+ 	outline:none;
+ 	border:none;
+ }
+
+
+ .md-form-username {
+ 	background-color: #ddd;
+ 	position: relative;
+ 	padding: 0 30px 30px;
+ 	text-align: center;
+ 	font-weight:$light;
+ }
+
+ .md-form-username::after {
+ 	content: "";
+ 	width: 0px;
+ 	height: 0px;
+ 	position: absolute;
+ 	border-style: solid;
+ 	border-width: 0.75em 0.75em 0 0.75em;
+ 	border-color: #ddd transparent transparent transparent;
+ 	bottom:-0.75em;
+ 	left: 50%;
+ 	margin-left: -0.75em;
+ 	z-index: 2;
+ }
+
+ .md-form-password {
+ 	background-color: #ccc;
+ 	position: relative;
+ 	text-align: center;
+ 	padding: 0 30px 30px;
+ 	font-weight:$light;
+ }
+
+ /* === MODAL LOGIN BUTTONS === */
+
+ .md-login-button {
+ 	position: absolute;
+ 	width: 76px;
+ 	height: 76px;
+ 	border-radius:50%;
+ 	@include transform-translate(-50%, -50%);
+ 	font-size: 30px;
+ 	cursor: pointer;
+ 	z-index: 5;
+ 	color:white;
+ 	top:100%;
+ }
+
+ .md-up-login {
+ 	left:100%;
+ 	background: rgba(231,56,39,1);
+ 	background: linear-gradient(to bottom right, rgba(212,0,95,1.0), rgba(231,56,39,1));
+ }
+
+ .md-fb-login {
+ 	left: 0%;
+ 	background: #3B5998;
+ 	background: linear-gradient(to bottom right, rgba(0,95,212,1.0), #3B5998);
+ }
+
+ .md-login-icon {
+ 	position: absolute;
+ 	text-align:center;
+ 	left: 50%;
+ 	top: 50%;
+ 	@include transform-translate(-50%, -50%);
+ 	opacity:1;
+ }
+
+ /* === LOGIN ANIMATIONS  === */
+
+ .md-login-button.success {
+ 	background: #2ecc71;
+ 	background: linear-gradient(to bottom right, #1abc9c, #2ecc71);
+ 	z-index:2;
+ 	border-radius:0;
+ 	left:50%;
+ 	top:50%;
+ 	width: 100%;
+ 	height: 100%;
+ 	transition-property: top, left, border-radius, width, height;
+ 	transition-duration:0.5s,0.5s,0.3s,0.5s,0.5s;
+ 	transition-delay:0.0s,0.0s,0.5s,0.8s,0.8s;
+ 	transition-timing-function: ease;
+ }
+
+ .md-login-button.success .md-login-icon {
+ 	transition-delay:0.8s;
+ 	opacity:0;
+ }
+
+ /* === MODAL SUCCESS === */
+
+ .md-success {
+ 	visibility:hidden;
+ 	opacity:0;
+ 	position: absolute;
+ 	top: 0;
+ 	right: 0;
+ 	bottom: 0;
+ 	left: 0;
+ 	z-index:3; 
+ }
+
+ .success ~ .md-success {
+ 	visibility:visible;
+ 	opacity:1;
+ 	transition: all 0.3s;
+ 	transition-delay:1.3s;
+ }
+
+ .md-success-img {
+ 	display:block;
+ 	margin: 15 auto;
+ 	border-radius:6px;
+ }

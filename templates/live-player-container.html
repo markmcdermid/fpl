@@ -1,0 +1,35 @@
+<div class="live-player-container-small">
+
+	<div class="live-player live-player-pos-{{player.type_name}} live-player-{{player.team_id}}">
+		<div ng-class="{'has-info': player.hasInfo}"></div>
+		
+		<div class="live-player-shirt">
+			<!--
+				SAVES
+			 <div class="bubble-wrap" ng-show="player.saves" >
+				<span class="live-player-info-bubble live-player-saves" title="Saves">{{player.saves}}</span>
+			</div> -->
+
+			<div class="live-player-side goals">
+				<span class="live-player-info-bubble live-player-goal side{{i}}" ng-show="player.goals" ng-repeat="i in count(player.goals)"></span>
+			</div>
+			<div class="live-player-side assists">
+				<span class="live-player-info-bubble live-player-assist side{{i}}" ng-show="player.assists" ng-repeat="i in count(player.assists)">A</span>
+			</div>
+			<!-- <div ng-show="player.clean_sheet">
+				<span class="live-player-info-bubble live-player-cleanSheet">CS</span>
+			</div> -->
+
+			<div class="live-player-card yc" ng-show="player.yc"></div>
+			<div class="live-player-card rc" ng-show="player.rc"></div>
+		</div>
+	</div>
+	<div class="live-player-bottom-info">
+		<div class="live-player-name">{{player.web_name | limitTo: 12}}</div><br/>
+		<div class="live-player-livePoints" ng-show="player.points != null || player.total_points != null">
+			{{player.points}}{{player.total_points}}
+		</div>
+	</div>
+
+
+</div>

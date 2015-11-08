@@ -1,0 +1,4 @@
+<?php 
+
+$teamsIndex = ["01" => [ "Arsenal", "ARS"],"02" => [ "Aston Villa", "AVL"],"03" => [ "Bournemouth", "BOU"],"04" => [ "Chelsea", "CHE"],"05" => [ "Crystal Palace", "CRY"],"06" => [ "Everton", "EVE"],"07" => [ "Leicester", "LEI"],"08" => [ "Liverpool", "LIV"],"09" => [ "Man City", "MCI"],"10" => [ "Man Utd", "MUN"],"11" => [ "Newcastle", "NEW"],"12" => [ "Norwich", "NOR"],"13" => [ "Southampton", "SOU"],"14" => [ "Spurs", "TOT"],"15" => [ "Stoke", "STK"],"16" => [ "Sunderland", "SUN"],"17" => [ "Swansea", "SWA"],"18" => [ "Watford", "WAT"],"19" => [ "West Brom", "WBA"],"20" => [ "West Ham", "WHU"]];
+?>

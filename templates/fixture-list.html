@@ -1,0 +1,44 @@
+
+<div class="col-md-12 col-lg-6 no-gutter wrap">
+	<div class="fixture-overlay-mobile" ng-click="pitchHide()" ng-class="{active: !pitchHidden}"></div>
+	<div class="col-xs-6" ng-repeat="(fixKey,fixture) in fixtures" ng-click="fixtureState(fixture[5],fixture[6],gwk)">
+		<div class="fix">
+			<div class="inner">
+				<div class="live-player live-player-{{fixture[5]+1}}"></div>
+				<h3 class="team-name">{{fixture[1]}}</h3>
+			</div>
+			<div class="inner">
+				<div>
+					<h2>vs</h2>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="live-player live-player-{{fixture[6]+1}}"></div>
+				<h3 class="team-name">{{fixture[2]}}</h3>
+			</div>
+		</div>
+		<div class="time"><h2>{{fixture[0] | date: 'EEE H:mm'}}</h2></div>
+	</div> <!-- col-xs-6 -->
+</div>
+<!-- 
+	<div class="col-xs-12 col-sm-6">
+		<div class="live-game-title">Gameweek {{gwk}} Fixtures</div>
+		<ul 
+		class="fixtures-list" 
+		ng-class="{active: checkFix(fixKey)}" 
+		ng-repeat="(fixKey,fixture) in fixtures" 
+		ui-sref='app.fix.list.pitch({id: fixKey, gwk: gwk, idA:fixture[5], idB: fixture[6]})'>
+		<li class="fixture-info"></li>
+		<li class="fixture-info fixture-info-shirt">
+			<div class="fixture-shirt live-player-{{fixture[5]+1}}"></div>
+		</li>
+		<li class="fixture-info fixture-info-team {{homeDif}}">
+			{{fixture[1]}}
+		</li>
+		<li class="fixture-info">vs</li>
+		<li class="fixture-info fixture-info-team fixture-team-away {{awayDif}}">{{fixture[2]}}</li>
+		<li class="fixture-info fixture-info-shirt">
+			<div class="fixture-shirt live-player-{{fixture[6]+1}}"></div>
+		</li>
+	</ul></a>
+</div> -->

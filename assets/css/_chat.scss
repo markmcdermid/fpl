@@ -1,0 +1,108 @@
+/* === CHAT === */
+
+.chat-wrap {
+	width: 100%;
+	position:relative;
+	margin-top: 10px;
+	border-radius:10px;
+	padding:4px;
+}
+
+.chat-form-wrap {
+	height:15%;
+	position:relative;
+	bottom:0;
+	width:100%;
+}
+
+.chat {
+	max-height:85%;
+	overflow-y:auto;
+	padding-right:5px;
+}
+
+.chat-line {
+	width:100%;
+	margin:2 auto;
+	padding:10;
+	background-color:white;
+	box-shadow: 0px 1px 1px 1px rgba(51,51,51,0.2);
+	position:relative;
+	@include clearfix();
+	transition: all 0.5s ease-in-out;
+}
+
+.chat-line:last-child {
+	border-radius: 0 0 10px 10px;
+}
+.chat-line.unselected {
+	background-color: #E9D63B;
+	opacity:0.6;
+}
+
+.chat-line.selected {
+	position:relative;
+}
+
+.chat-line-remove {
+	float:right;
+	cursor:pointer;
+}
+
+.chat-line-edit {
+	float:right;
+	cursor:pointer;
+	margin-right: 5px;
+}
+
+.chat-line-edit:hover{
+	top:-1;
+	color: #E1A45D;
+}
+.chat-line-remove:hover{
+	top:-1;
+	color: #C21F21;
+}
+
+.chat-line-edit-input {
+	width:100%;
+	overflow:hidden;
+	outline:none;
+	border:none;
+	background: rgba(0,0,0,0.05);
+}
+
+.chat-line-timestamp {
+	position: absolute;
+	right: 0;
+	bottom:0;
+	opacity:0.5;
+	padding:5;
+}
+
+.chat-line-message {
+	overflow:hidden;
+	margin-bottom: 15px;
+}
+.chat-line-username {
+	font-weight:$bold;
+}
+
+.chat-line-picture {
+	float:left;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.chat-input {
+	width: 100%;
+	background-color:white;
+	padding:10 15;
+	border:none;
+	margin: 5px 0;
+}
+
+.fa-comment {
+	font-size:20px;
+}

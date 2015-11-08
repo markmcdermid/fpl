@@ -1,0 +1,14 @@
+<div class="col-sm-12 col-md-12 col-lg-6 live-game" ng-repeat="player in pitch.players">
+	<div class="live-game-title" ng-click="pitch.selectTab(player[0].team)">
+		<p class="lead">{{player[0].team_name}}</p>
+	</div>
+	<div class="live-game-pitch active" ng-class="{active:pitch.isSelected(player[0].team)}">
+		<div class="live-game-home">
+			<div ng-repeat="(key,value) in player | groupBy: 'type_name'" class="live-game-line live-game-line-{{key}}" >
+				<div ng-repeat="player in value | orderBy:'1 * total_points'" class="live-player-container" ng-style="{'width' : width }">
+					<player-container></player-container>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

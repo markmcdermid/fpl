@@ -1,0 +1,16 @@
+<div class="team-compare-container">
+	<div class="team-compare-box">Team</div>
+	<div class="team-compare-box" ng-repeat="fixtures in teamFixtures['ARS'] | limitTo:38:gwkSlider">
+		GWK {{fixtures[1]}}
+	</div>
+	<div class="team-compare-row" ng-repeat="(team,fixtures) in teamFixtures">
+		<div class="team-compare-box">{{team}}</div>
+		<div class="team-compare-box {{fixture[2]}}" ng-repeat="fixture in fixtures | limitTo:38:gwkSlider">{{fixture[0]}}</div>
+	</div>
+
+	<div class="team-compare-slider">
+		<rzslider rz-slider-model="gwkSlider" rz-slider-ceil="38">
+		</rzslider>
+	</div>
+
+</div>

@@ -1,0 +1,21 @@
+{
+  "name": "fpl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mm",
+  "license": "ISC",
+  "devDependencies": {
+    "angular-ui-router": "^0.2.15",
+    "angularjs-scroll-glue": "^2.0.4",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-includes": "^0.5.1",
+    "grunt-postcss": "^0.6.0",
+    "grunt-sass": "^1.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+<div class="wrap">
+	<dialog class="dialog"> 
+		dialog Modal
+	</dialog> <!-- div modal -->
+	<gameweek></gameweek>
+	<div class="container" ui-view="fixtures"></div>
+		<!-- <fixtures></fixtures> -->
+		<!-- <fixture-pitches></fixture-pitches> -->
+	</div> <!-- container -->
+	<div class="container" ng-class="{active: wrap.isSelected(2)}">
+		<pitches></pitches>
+	</div> <!-- container -->
+	<div class="container" ui-view="compareteams"></div>
+	<div class="container" ng-class="{active: wrap.isSelected(4)}">
+		<!-- <chat></chat> -->
+	</div> <!-- container -->
+
+</div><!-- Wrap -->

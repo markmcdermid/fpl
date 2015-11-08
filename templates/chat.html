@@ -1,0 +1,32 @@
+<div class="col-xs-12 col-sm-12">
+	<div class="chat-wrap">
+		<div class="chat" scroll-glue-bottom>
+			<div class="chat-line" ng-repeat="message in messages" 
+			ng-class="{'unselected': $index !== selected && editing, 'selected': $index === selected && editing}">
+
+			<div class="chat-line-remove" ng-click="remove(message)" ng-show="userDing.uid === message.uid"><i class="fa fa-times"></i></div>
+			<div class="chat-line-edit"  ng-click="edit($index)" ng-show="userDing.uid === message.uid"><i class="fa fa-pencil-square-o"></i></div>
+			<div class="chat-line-timestamp"><i class="fa fa-clock-o"></i> {{message.timestamp | date: 'd/M H:mm:ss'}}</div>
+
+			<img class="chat-line-picture" ng-src="{{message.imgSrc}}" alt="pic">
+
+			<div class="chat-line-message">
+				<div class="chat-line-username">
+					{{message.user}}:
+				</div>
+				<div class="chat-line-text" ng-hide="$index === selected && editing">{{message.text}}</div>
+				<div class="chat-line-edit-form" ng-show="$index === selected && editing" ng-show="userDing.uid === message.uid">
+					<form>
+						<textarea class="chat-line-edit-input" ng-model="message.text" ng-change="messages.$save(message)" enter-submit="done()"></textarea>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+</div>
+<form ng-submit="addMessage()">
+	<input ng-model="newMessageText" class="chat-input" type="text" placeholder="Your message here">
+</form>
+</div>

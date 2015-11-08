@@ -1,0 +1,568 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+$thin: 100; $light: 300; $normal: 400; $bold: 700; $ultra-bold: 900;
+$font-stack: Lato, sans-serif;
+
+$primary-color: #fff;
+$dark-grey: #2E2C2A; 
+$light-grey: #ecf0f5;
+
+@mixin transform-translate($f,$g) {
+	transform: translateX($f) translateY($g);
+}
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+@import 'fixtures';
+* {
+	font:100% $font-stack;
+	box-sizing:border-box;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a {
+	color: inherit;
+}
+
+html,body
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden; 
+	background: $light-grey;
+}
+
+h1 {
+	font-size:40px;
+	font-weight: $light;
+	text-align: center;
+}
+
+p.lead {
+	font-size:1.4em;
+	font-weight: $light;
+}
+
+.outer-wrap {
+	background: url("../img/background.jpg");
+	background-size:cover;
+	margin-top:8vh;
+	z-index:0;
+	padding-top:20px;
+	padding-bottom:20px;
+
+}
+.wrap {
+	margin: 0 auto;
+	position: relative;
+	overflow:auto;
+	height:80vh;
+}
+
+.overlay {
+	background:rgba(0,0,0,0.5);
+}
+
+@import 'header';
+@import 'footer';
+
+
+/* === NAV MENU === */
+
+.nav-menu-outer {
+	@include clearfix();
+	background-color:$dark-grey;
+	max-width:1200px;
+	margin: 0 auto;
+}
+.nav-menu-inline {
+	display:inline-block;
+	width: 25%;
+	text-align: center;
+	line-height:35px;
+	background-color:$dark-grey;
+	color:white;
+	border-left:none;
+	float:left;
+	text-transform: uppercase;
+	font-weight: $light;
+	touch-action: manipulation;
+}
+.nav-menu-inline:hover {
+	background-color:$light-grey;
+	color:#333;
+	font-weight: $normal;
+	border-bottom:2px solid red;
+}
+
+.nav-menu-inline-one {
+	border-bottom: 2px solid green;
+}
+.nav-menu-inline-two {
+	border-bottom: 2px solid yellow;
+}
+.nav-menu-inline-three {
+	border-bottom: 2px solid red;
+}
+.nav-menu-inline-four {
+	border-bottom: 2px solid orange;
+}
+
+.live-game-title {
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px;
+	color:black;
+	max-width:450px;
+
+}
+.live-game-pitch {
+	height: 680px;
+	width: 510px;
+	background: url("../img/pitch.jpg") no-repeat 50% 50%;
+	background-size:cover;
+	margin: 20px auto;
+	position: relative;
+	border-radius:30px;
+	box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.5);
+}
+
+.live-game-pitch > .md-close {
+	display:none;
+}
+.live-game-half {
+	height:50%;
+	overflow:hidden;
+
+}
+
+.active {
+	display:block;
+}
+
+
+.fixture-shirt {
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	font-size: 14px;
+	margin: 0 auto;
+	position: absolute;
+	bottom:-16px;
+}
+
+.fixture-shirt:before {
+	content: '';
+	display:block;
+	background: url('../img/shirtsprite4.png');
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+	z-index:1;
+}
+
+.live-player-container {
+	text-align: center;
+	font-size: 12px;
+	color:black;
+	float:left;
+ 	//Width set by js
+ 	user-select: none;
+ }
+
+ .live-player-container-small {
+ 	margin: 0 auto;
+ 	position: relative;
+ 	max-width: 70px;
+ }
+
+ .live-game-line{
+ 	overflow:hidden;
+ }
+
+ $playerSize: 60px;
+ .live-player {
+ 	width: $playerSize;
+ 	height: $playerSize;
+ 	font-size: 14px;
+ 	margin: 0 auto;
+ 	position: relative;
+ 	background: url('../img/shirtsprite4.png');
+ 	background-size: 1200px 60px;
+ }
+
+ .live-player-pos-goalkeeper { 	
+ 	background: url('../img/keepersprite2.png');
+ }
+
+ .live-player-1/* === Arsenal === */{background-position:0%, 0;}
+ .live-player-2/* === Aston villa === */{background-position: 5.263%, 0;}
+ .live-player-3/* === Bournemouth === */{background-position: 10.526%, 0;}
+ .live-player-4/* === Chelsea === */{background-position: 15.789%, 0;}
+ .live-player-5/* === Crystal Palace === */{background-position: 21.052%, 0;}
+ .live-player-6/* === Everton === */{background-position: 26.315%, 0;}
+ .live-player-7/* === Leicester === */{background-position: 31.578%, 0;}
+ .live-player-8/* === Liverpool === */{background-position: 36.841%, 0;}
+ .live-player-9/* === Man city === */{background-position: 42.104%, 0;}
+ .live-player-10 /* === Man Utd === */{background-position: 47.367%, 0;}
+ .live-player-11 /* === Newcastle === */{background-position: 52.631%, 0;}
+ .live-player-12 /* === Norwich === */{background-position: 57.894%, 0;}
+ .live-player-13 /* === Southampton === */{background-position: 63.157%, 0;}
+ .live-player-14 /* === Spurs === */{background-position: 68.420%, 0;}
+ .live-player-15 /* === Stoke === */{background-position: 73.683%, 0;}
+ .live-player-16 /* === Sunderland === */{background-position: 78.946%, 0;}
+ .live-player-17 /* === Swansea === */{background-position: 84.209%, 0;}
+ .live-player-18 /* === Watford === */{background-position: 89.472%, 0;}
+ .live-player-19 /* === West Brom === */{background-position: 94.735%, 0;}
+ .live-player-20 /* === West Ham === */{background-position: 99.998%, 0;}
+
+ .live-player-bottom-info {
+ 	width:100%;
+ 	z-index:2;
+ 	position:relative;
+ 	top:-14px;
+ }
+ .live-player-history {
+ 	display:inline-block;
+ 	background:rgba(0,0,0,1);
+ 	text-align: center;
+ 	font-size: 12px;
+ 	position:relative;
+ 	bottom: 0px;
+ 	opacity:1;
+ 	height: 20px;
+ 	width: 20px;
+ 	line-height: 20px;
+ 	margin: 2px;
+ 	border-radius:50%;
+ }
+
+ .live-player-name {
+ 	font-weight:$bold;
+ 	color:white;
+ 	margin: 0 auto;
+ 	padding: 2px 4px;
+ 	display:inline-block;
+ 	white-space:nowrap;
+ 	background-color: #119630;
+ 	font-size:12px;
+ 	border-radius:5px;
+ 	min-width:48px;
+ }
+ .live-player-points {
+ 	position: absolute;
+ 	right: -4;
+ 	top: -4;
+ 	color:white;
+ 	background: $dark-grey;
+ 	font-size: 14px;
+ 	z-index: 1000;
+ 	width: 24px;
+ 	height: 25px;
+ 	line-height:25px;
+ 	text-align: center;
+ 	border-radius:50%;
+ 	white-space:nowrap;
+ 	font-weight:$ultra-bold;
+ }
+
+ .live-player-bps {
+ 	height:18px;
+ 	line-height:18px;
+ 	color:white;
+ 	background-color:rgba(0,0,0,0.7);
+ 	width:38px;
+ 	margin: 0 auto;
+ }
+
+ .live-player-livePoints {
+ 	color:white;
+ 	padding: 0 2px;
+ 	display:inline-block;
+ 	white-space:nowrap;
+ 	background-color: #0B6921;
+ 	border-radius:20%;
+ 	font-size:13px;
+ 	font-weight: $ultra-bold;
+ }
+
+ .live-player-livePoints.bps {
+ 	font-weight:$normal;
+ 	background-color:none;
+ }
+
+ .live-player-livePoints.gold {
+ 	background-color:#EFC900;
+ }
+  .live-player-livePoints.silver {
+ 	background-color:silver;
+ } 
+ .live-player-livePoints.bronze {
+ 	background-color:#965A38;
+ }
+
+ .live-player-shirt {
+ 	font-size:0px;
+ 	margin: 0 auto;
+ 	height:100%;
+ 	width: 66%
+ }
+
+ .live-player-info-bubble {
+ 	display:block;
+ 	color:black;
+ 	font-size: 12px;
+ 	z-index: 3;
+ 	width: 18px;
+ 	height:18px;
+ 	line-height:18px;
+ 	border-radius:50%;
+ 	margin: 0 auto;
+ }
+
+ .live-player-side {
+ 	position:absolute;
+ 	top: 0px;
+ 	z-index: 3;
+ }
+
+ /* === ASSISTS === */
+
+ .live-player-side.assists {
+ 	left: -10px;
+ }
+
+ .live-player-assist {
+ 	padding-left: 1px;
+ 	width: 20px;
+ 	height: 20px;
+ 	border-radius:50%;
+ 	background-color:$dark-grey;
+ 	color:white;
+ 	line-height:20px;
+ 	font-weight:$ultra-bold;
+ }
+
+ /* === GOALS === */
+ .live-player-side.goals {
+ 	right: -10px;
+ }
+
+ .live-player-goal {
+ 	background: url(../img/football28.png);
+ 	width: 20px;
+ 	height: 20px;
+ 	background-size: 20px 20px;
+ 	margin-bottom: 1px;
+ }
+
+ .live-player-side .side1 {
+ 	position:relative;
+ 	top:-7px;
+ }
+
+ .live-player-side .side2 {
+ 	position:relative;
+ 	top:-14px;
+ }
+
+ .live-player-side .side3 {
+ 	position:relative;
+ 	top:-21px;
+ }
+
+ .live-player-side .side4 {
+ 	position:relative;
+ 	top:-28px;
+ }
+
+
+ .live-player-saves {
+ 	background: pink;
+ 	color:black;
+ }
+
+
+ .live-player-cleanSheet{
+ 	color: $dark-grey;
+ 	background:white;
+ 	font-size: 9;
+ 	position: absolute;
+ 	right: -14;
+ 	bottom: 34;
+ 	z-index:2001;
+ 	width: 15px;
+ 	height: 15px;
+ }
+
+ .live-player-card {
+ 	position: absolute;
+ 	left: 0px;
+ 	bottom: 5px;
+ 	width: 18px;
+ 	height: 25px;
+ 	border-radius:15%;
+ 	transform: rotate(-10deg);
+ 	box-shadow: 1px -1px 4px 1px rgba(0,0,0,0.9);
+ 	z-index:2;
+ }
+
+ .live-player-card.yc {
+ 	background: yellow;
+ }
+
+ .live-player-card.rc {
+ 	background: red;
+ }
+
+ .fixtures-list {
+ 	@include clearfix();
+ 	background-color:#fff;
+ 	cursor:pointer;
+ 	position:relative;
+ 	font-size:12px;
+ 	margin: 20px 0px;
+ 	box-shadow: 0px 1px 1px 1px rgba(51,51,51,0.5);
+ }
+
+ .fixture-info {
+ 	float:left;
+ 	padding:15px 10px;
+ }
+
+ .fixture-info-shirt {
+ 	position:relative;
+ 	width:60px;
+ }
+
+ .fixture-info-team {
+ 	width:120px;
+ 	text-align: right;
+ }
+
+ .fixture-team-away {
+ 	text-align:left;
+ 	white-space: nowrap;
+ }
+
+ .fixtures-list.active .fixture-info{
+ 	font-weight:$ultra-bold;
+ 	font-size:13px;
+ } 
+ .fixtures-list:hover {
+ 	background-color:#eee
+ }
+ .fixture-info-live {
+ 	color:lime;
+ }
+
+ /* === TEAM COMPARE === */
+ .team-compare-container {
+ 	overflow-x:hidden;
+ 	white-space:nowrap;
+ 	width:90%;
+ 	margin: 0 auto;
+ 	font-size:0;
+ }
+
+ .team-compare-box {
+ 	width:20%;
+ 	max-width:70px;
+ 	display:inline-block;
+ 	text-align: center;
+ 	padding:3px 5px;
+ 	font-size:11px;
+ 	background-color:white;
+ 	margin:0;
+ }
+ rzslider .rz-bubble {
+ 	color:white;
+ }
+
+ .team-compare-box.vvvh { background-color: rgb(255,0,0);}
+ .team-compare-box.vvh { background-color: rgb(255,51,0);}
+ .team-compare-box.vh { background-color: rgb(255,102,0);}
+ .team-compare-box.h { background-color: rgb(255,153,0);}
+ .team-compare-box.qh { background-color: rgb(255,204,0);}
+ .team-compare-box.m { background-color: rgb(255,255,0);}
+ .team-compare-box.qe { background-color: rgb(204,255,0);}
+ .team-compare-box.e { background-color: rgb(153,255,0);}
+ .team-compare-box.ve { background-color: rgb(102,255,0);}
+ .team-compare-box.vve { background-color: rgb(51,255,0);}
+ .team-compare-box.vvve { background-color: rgb(0,255,0);}
+
+ @import 'chat';
+
+ @import 'modal';
+ /* === MEDIA QUERIES === */
+
+ @media screen and (max-width:1024px) {
+
+	#footer {
+		display:none;
+	}
+	.wrap.container {
+		padding-left: 0;
+		padding-right:0;
+	}
+
+	.team-compare-container {
+		padding-top:20px;
+	}
+ 	.live-game-pitch > .md-close {
+ 		display:block;
+ 		opacity:1;
+ 	}
+
+ 	.live-game.mobileHidden {
+ 		display:none;
+ 	}
+
+ 	.live-player {
+ 		width:35px;
+ 		height:35px;
+ 		background-size: 700px 35px;
+ 	}
+
+ 	.outer-wrap {
+ 		padding-top: 0px;
+ 		padding-bottom:0px;
+ 	}
+
+ 	#header .gwk {
+ 		display:none;
+ 	}
+
+ 	#header .menu {
+ 		margin-right:auto;
+ 	}
+ }
+
+ @media screen and (min-width: 768px) and (max-width: 1024px) {
+ 	.wrap.container {
+ 		width:100%;
+ 	}
+ }
+
+ @media screen and (min-width:1024px) {
+ 	.team-compare-box {
+
+ 		padding:4px;
+
+ 	}
+ }
